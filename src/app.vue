@@ -5,14 +5,13 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
-  export default {
-    replace: false,
-  	data() {
-      return {
-        text: 'vue'
-      }
+<script>
+    module.exports = {
+        replace: false,
+        data:function(){
+            return {
+                text: 'vue'
+            }
+        }
     }
-  }
-iife();
 </script>
