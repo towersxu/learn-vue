@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   export default {
     replace: false,
   	data() {
@@ -14,4 +14,5 @@
       }
     }
   }
+iife();
 </script>
