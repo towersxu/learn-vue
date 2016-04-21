@@ -10,7 +10,7 @@
           <li>学院</li>
         </ul>
       </div>
-      <div class="upload-btn" v-on:click.stop="isOpUp=true">
+      <div class="upload-btn">
         <i class="cloud sp i129"></i>
         <div class="upload animated" v-show="isOpUp" transition="flipInX">
           <span>上传素材</span>
