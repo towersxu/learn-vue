@@ -7,4 +7,4 @@
 <script type="text/ecmascript-6">
 <script>
 ```
-###暂时不使用ES6webpack的代码分割不直接支持ES6.
+暂时不使用ES6,webpack的代码分割不直接支持ES6.
