@@ -1,19 +1,20 @@
 <template>
   <div class="main">
-    <input type="text" v-model="text"/>
-
-    <div class="hello">Hello {{ text }}!</div>
-    <div class="inline-block sp i33"></div>
+    <my-header></my-header>
   </div>
 </template>
 
 <script>
+  var header = require('./components/header/header.vue');
   module.exports = {
     replace: false,
     data: function () {
       return {
         text: 'vue'
       }
+    },
+    components:{
+      myHeader:header
     }
   }
 </script>

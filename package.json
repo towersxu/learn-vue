@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet --port 3000",
-    "build": "rm -rf build/* && webpack --progress --hide-modules --config webpack.production.js"
+    "build": "rm -rf build/* && webpack --progress --hide-modules --config webpack.production.js && webpack-dev-server --hot --port 3001"
   },
   "dependencies": {
     "vue-router": "^0.7.6",
