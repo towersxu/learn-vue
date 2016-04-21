@@ -1,22 +1,22 @@
 <template>
-  <div class="main">
-    <my-header></my-header>
-    <my-mask></my-mask>
-  </div>
-</template>
+  <!-- main view -->
+  <my-mask></my-mask>
+  <router-view
+      class="view"
+      keep-alive
+      transition
+      transition-mode="out-in">
+    <div>
 
+    </div>
+  </router-view>
+</template>
 <script>
-  var header = require('./components/header/header.vue');
   var mask = require('./components/mask/mask.vue');
+
   module.exports = {
-    replace: false,
-    data: function () {
-      return {
-        text: 'vue'
-      }
-    },
+    replace:false,
     components:{
-      myHeader:header,
       myMask:mask
     },
     events:{
