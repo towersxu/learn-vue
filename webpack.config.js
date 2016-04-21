@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -21,5 +22,10 @@ module.exports = {
       { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' }
     ]
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      "Vue":"vue"
+    })
+  ],
   devtool: '#source-map'
 }

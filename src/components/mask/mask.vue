@@ -3,13 +3,12 @@
     <div class="loader" v-show="isLoading">Loading...</div>
     <div id="example">
       <!--<async></async>-->
-      <sign></sign>
+      <my-sign></my-sign>
     </div>
   </div>
 </template>
 
 <script>
-  var sign = require('../sign/sign.vue');
   module.exports = {
     replace: true,
     data: function () {
@@ -24,38 +23,35 @@
         this.isLoading = false;
       }
     },
-    components:{
-      sign:sign
-    },
     events: {
       'mask_show': function (msg) {
         this.isShow = true;
-//        if (!this.asyncModule) {
-//          var that = this;
-//          Vue.component('async', function (resolve, reject) {
-//            require.ensure(["../modal/user-modal.vue"], function (require) {
-//              that.isLoading = false;
-//              resolve(require("../modal/user-modal.vue"));
-//            });
-//          });
-//          that.asyncModule = new Vue({
-//            el: '#example',
-//            data: function(){
-//              return {msg:msg};
-//            },
-//            events: {
-//              'get_init': function () {
-//                this.$broadcast('init_data', this.msg);
-//              },
-//              'close_modal': function () {
-//                that.reset();
-//              }
-//            }
-//          });
-//        } else {
-//          this.asyncModule.msg = msg;
-//          this.asyncModule.$emit('get_init');
-//        }
+        if (!this.asyncModule) {
+          var that = this;
+          Vue.component('mySign', function (resolve, reject) {
+            require.ensure(["../sign/sign.vue"], function (require) {
+              that.isLoading = false;
+              resolve(require("../sign/sign.vue"));
+            });
+          });
+          that.asyncModule = new Vue({
+            el: '#example',
+            data: function(){
+              return {msg:msg};
+            },
+            events: {
+              'get_init': function () {
+                this.$broadcast('init_data', this.msg);
+              },
+              'close_modal': function () {
+                that.reset();
+              }
+            }
+          });
+        } else {
+          this.asyncModule.msg = msg;
+          this.asyncModule.$emit('get_init');
+        }
       }
     }
   };

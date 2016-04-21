@@ -10,6 +10,14 @@ Vue.config.debug = process.env.NODE_ENV !== 'production';
 
 Vue.use(VueRouter);
 
+Vue.transition('fade',{
+  enterClass:'fadeInDown',
+  leaveClass:'fadeOutDown'
+});
+Vue.transition('flipInX',{
+  enterClass:'flipInX',
+  leaveClass:'flipOutX'
+});
 var router = new VueRouter();
 var App = Vue.extend(app);
 
