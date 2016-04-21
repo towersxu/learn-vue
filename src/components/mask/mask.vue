@@ -1,8 +1,7 @@
 <template>
   <div class="mask hidden" v-bind:class="{'show':isShow}">
     <div class="loader" v-show="isLoading">Loading...</div>
-    <div id="example">
-      <!--<async></async>-->
+    <div id="js-mask">
       <my-sign></my-sign>
     </div>
   </div>
@@ -35,7 +34,7 @@
             });
           });
           that.asyncModule = new Vue({
-            el: '#example',
+            el: '#js-mask',
             data: function(){
               return {msg:msg};
             },
